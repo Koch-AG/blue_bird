@@ -232,15 +232,15 @@ defmodule BlueBird.Writer.Blueprint do
 
   @spec print_route_definition(Route.t()) :: String.t()
   defp print_route_definition(route) do
-    print_route_header(route.method, route.title) <>
+    print_route_header(route.method, route.title, route.path) <>
       print_route_description(route.description)
   end
 
-  @spec print_route_header(String.t(), String.t() | nil) :: String.t()
-  defp print_route_header(method, nil), do: "### #{method}\n"
+  @spec print_route_header(String.t(), String.t() | nil, String.t() | nil) :: String.t()
+  defp print_route_header(method, nil, path), do: "### #{method} #{path}\n"
 
-  defp print_route_header(method, title) do
-    "### #{title} [#{method}]\n"
+  defp print_route_header(method, title, path) do
+    "### #{title} [#{method} #{path}]\n"
   end
 
   @spec print_route_description(String.t() | nil) :: String.t()
