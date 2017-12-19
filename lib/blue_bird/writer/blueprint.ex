@@ -232,7 +232,8 @@ defmodule BlueBird.Writer.Blueprint do
 
   @spec print_route_definition(Route.t()) :: String.t()
   defp print_route_definition(route) do
-    print_route_header(route.method, route.title, route.path) <>
+    route_path = route |> display_path()
+    print_route_header(route.method, route.title, route_path) <>
       print_route_description(route.description)
   end
 
