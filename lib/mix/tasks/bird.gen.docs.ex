@@ -28,7 +28,7 @@ defmodule Mix.Tasks.Bird.Gen.Docs do
     System.cmd("aglio", [
       "--theme-template",
       docs_theme,
-      "--system-condense-nav",
+      "--theme-condense-nav",
       "false",
       "-i",
       Path.join(path, "api.apib"),
