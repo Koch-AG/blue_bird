@@ -61,9 +61,6 @@ defmodule BlueBird.Mixfile do
       # Docs
       {:ex_doc, ">= 0.16.4", only: :dev},
 
-      # Phoenix Framework
-      {:phoenix, "~> 1.3.0", optional: true},
-
       # Composable modules
       {:plug, ">= 1.4.3"},
 
